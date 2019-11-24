@@ -9,15 +9,16 @@ public class RetratoRobot {
 	public static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 	public static void main(String[] args) throws IOException {
-		char rep=' ';
+		char rep = ' ';
 		do {
-		System.out.println("ROBOTIN\n");
-		System.out.println("Aquí está nuestro ROBOTIN\n\n" + pelo() + "\n"+ ojos()+"\n"+ nariz()+"\n"+boca()+"\n"+barbilla()+"\n");
-		System.out.println("Si quieres hacer otro Robot pulsa S, sino pulsa cualquier tecla.");
-		rep= (char) in.read();
-		}while(rep=='s'|| rep=='S');
+			System.out.println("ROBOTIN\n");
+			System.out.println("Aquí está nuestro ROBOTIN\n\n" + pelo() + "\n" + ojos() + "\n" + nariz() + "\n" + boca()
+					+ "\n" + barbilla() + "\n");
+			System.out.println("Si quieres hacer otro Robot pulsa S, sino pulsa cualquier tecla.");
+			rep = (char) in.read();
+		} while (rep == 's' || rep == 'S');
 	}
-	
+
 	public static String pelo() throws IOException {
 		String modPelo = "";
 
@@ -27,7 +28,7 @@ public class RetratoRobot {
 		System.out.println("3. \"\"\"\"\"\"\"\"\"\"");
 		System.out.println("4. ||||||||||");
 
-		int opc=opcValid();
+		int opc = opcValid();
 
 		switch (opc) {
 		case 1:
@@ -47,7 +48,7 @@ public class RetratoRobot {
 		}
 		return modPelo;
 	}
-	
+
 	public static String ojos() throws IOException {
 		String modOjos = "";
 
@@ -57,7 +58,7 @@ public class RetratoRobot {
 		System.out.println("3. |  Ô  Ô  |");
 		System.out.println("4. |  \\  /  |");
 
-		int opc=opcValid();
+		int opc = opcValid();
 
 		switch (opc) {
 		case 1:
@@ -77,7 +78,7 @@ public class RetratoRobot {
 		}
 		return modOjos;
 	}
-	
+
 	public static String nariz() throws IOException {
 		String modNariz = "";
 
@@ -87,7 +88,7 @@ public class RetratoRobot {
 		System.out.println("3. [    \"    ]");
 		System.out.println("4. <    -    >");
 
-		int opc=opcValid();
+		int opc = opcValid();
 
 		switch (opc) {
 		case 1:
@@ -107,7 +108,7 @@ public class RetratoRobot {
 		}
 		return modNariz;
 	}
-	
+
 	public static String boca() throws IOException {
 		String modBoca = "";
 
@@ -117,12 +118,12 @@ public class RetratoRobot {
 		System.out.println("3. |   ---   |");
 		System.out.println("4. |    -    |");
 
-		int opc=opcValid();
+		int opc = opcValid();
 
 		switch (opc) {
 		case 1:
 			modBoca = "|   ===   |";
-			break; 
+			break;
 		case 2:
 			modBoca = "|   ___   |";
 			break;
@@ -137,17 +138,17 @@ public class RetratoRobot {
 		}
 		return modBoca;
 	}
-	
+
 	public static String barbilla() throws IOException {
 		String modBarbilla = "";
-		int exc=0;
-		int opc=0;
+		int exc = 0;
+		int opc = 0;
 
 		System.out.println("Y por último elige la barbilla");
 		System.out.println("1. \\________/");
 		System.out.println("2. \\,,,,,,,,/");
 
-	 	 do{
+		do {
 			try {
 				opc = Integer.parseInt(in.readLine());
 				exc = 1;
@@ -155,13 +156,13 @@ public class RetratoRobot {
 				System.out.print("No es una opción, inténtalo de nuevo.");
 				exc = 0;
 			}
-		}while ((opc != 1 && opc != 2)||exc ==0);
+		} while ((opc != 1 && opc != 2) || exc == 0);
 		exc = 0;
 
 		switch (opc) {
 		case 1:
 			modBarbilla = "\\_________/";
-			break; 
+			break;
 		case 2:
 			modBarbilla = "\\,,,,,,,,,/";
 			break;
@@ -171,10 +172,10 @@ public class RetratoRobot {
 		return modBarbilla;
 	}
 
-	 public static int opcValid() throws IOException{
-		int opc=0;
-	 	int exc=0;
-	 	while ((opc != 1 && opc != 2 && opc != 3 && opc != 4)||exc ==0) {
+	public static int opcValid() throws IOException {
+		int opc = 0;
+		int exc = 0;
+		while ((opc != 1 && opc != 2 && opc != 3 && opc != 4) || exc == 0) {
 			try {
 				opc = Integer.parseInt(in.readLine());
 				exc = 1;
@@ -182,9 +183,9 @@ public class RetratoRobot {
 				System.out.print("No es una opción, inténtalo de nuevo.");
 				exc = 0;
 			}
-		}exc = 0;
+		}
+		exc = 0;
 		return opc;
-	 }
-		
- }
-	 
+	}
+
+}
